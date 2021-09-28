@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Just a script to demonstrate how easy it is to imitate sudo's behaviour to steal user's password
+### Just a script to demonstrate how easy it is to imitate sudo's behaviour to steal a user's password
 ### Alias this script to sudo in .bashrc
 ### ONLY USE ON YOUR OWN ACCOUNTS
 

@@ -9,7 +9,7 @@ direction="$1"
 ### Modify to suit your need : 
 website_local_path="/home/USER/www/mysuperwebsite/"		# Don't forget the last `/` !
 website_remote_path="/var/www/html/"					# Don't forget the last `/` !
-server="user@111.111.111.111"
+server="user@42.42.42.42"
 
 if [[ "$2" == "delete" ]]; then
 	delete=1
