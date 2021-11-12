@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### You need to install spd_say text to speech utility for this to work
+### You need to install spd-say text to speech utility for this to work
 
 time="$1"
 countdown(){
